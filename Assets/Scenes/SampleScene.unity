@@ -124,8 +124,9 @@ GameObject:
   - component: {fileID: 123713251}
   - component: {fileID: 123713250}
   - component: {fileID: 123713249}
+  - component: {fileID: 123713253}
   m_Layer: 0
-  m_Name: Plane (2)
+  m_Name: LeftLane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -204,6 +205,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &123713253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123713248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c90cd44e9fa0a47812f51b0defc0ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Obstacle: {fileID: 447532139963473189, guid: 24fc6af9b80aaa440913aa4de904c67b, type: 3}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,8 +473,9 @@ GameObject:
   - component: {fileID: 1845126456}
   - component: {fileID: 1845126455}
   - component: {fileID: 1845126454}
+  - component: {fileID: 1845126458}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: MidLane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -539,6 +554,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1845126458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845126453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c90cd44e9fa0a47812f51b0defc0ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Obstacle: {fileID: 447532139963473189, guid: 24fc6af9b80aaa440913aa4de904c67b, type: 3}
 --- !u!1 &1904777609
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,8 +579,9 @@ GameObject:
   - component: {fileID: 1904777612}
   - component: {fileID: 1904777611}
   - component: {fileID: 1904777610}
+  - component: {fileID: 1904777614}
   m_Layer: 0
-  m_Name: Plane (1)
+  m_Name: RightLane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -631,3 +660,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1904777614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904777609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c90cd44e9fa0a47812f51b0defc0ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Obstacle: {fileID: 447532139963473189, guid: 24fc6af9b80aaa440913aa4de904c67b, type: 3}
