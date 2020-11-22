@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileScript : MonoBehaviour
+public class MummyScript : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,10 +13,6 @@ public class ProjectileScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(-Vector3.forward * Time.deltaTime * 40);
-        if (transform.position.z <= -50)
-        {
-            Destroy(this.gameObject);
-        }
+        
     }
 }
