@@ -1,20 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class humanMovement : MonoBehaviour
 {
+    public Text theScore;
+    int life = 3;
     // Start is called before the first frame update
     void Start()
     {
-        
+       
+        theScore.GetComponent<Text>();
+        theScore.text = life.ToString();
     }
-
+   
     int control = 2;
 
     // Update is called once per frame
     void Update()
     {
+        theScore.text = life.ToString();
+        if (life == 0) Invoke("LossScreen", 0.0f);
         if (transform.position.z < -5.6)
         {
             transform.position = transform.position + new Vector3(0, 0, .1f);
@@ -44,5 +51,15 @@ public class humanMovement : MonoBehaviour
             transform.position = transform.position + new Vector3(0, 2.5f, 0);
 
         }
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        life = life - 1;
+    }
+
+    void LossScreen()
+    {
+        //create loss screen here that allows restart or quit
     }
 }

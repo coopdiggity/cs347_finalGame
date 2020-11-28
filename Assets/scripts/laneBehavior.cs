@@ -5,11 +5,12 @@ using UnityEngine;
 public class laneBehavior : MonoBehaviour
 {
     public GameObject Obstacle;
-
+    Object obj; //instantiation obj
     float spawnDelay = 2.0f;
     // Start is called before the first frame update
     void Start()
     {
+       
         spawnDelay = Random.Range(0.4f, 5.9f); //get spawn delay
         Invoke("SpawnObstacle", spawnDelay); //spawn new
     }
@@ -17,7 +18,7 @@ public class laneBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
     void SpawnObstacle() //create new dropts
@@ -25,6 +26,12 @@ public class laneBehavior : MonoBehaviour
         var ObstacleClone = Instantiate(Obstacle, new Vector3(transform.position.x, 1, 300), Quaternion.identity);
         //ObstacleClone.GetComponent<Rigidbody>().velocity = -1 * transform.localScale.x * waterDropClone.transform.up;
         spawnDelay = Random.Range(0.4f, 5.9f); //get spawn time
+        if (Time.time >= 40) Invoke("spawnMummy", 0.0f);//time check for mummy
         Invoke("SpawnObstacle", spawnDelay); //new drop
+    }
+
+    void spawnMummy()
+    {
+        CancelInvoke();
     }
 }
