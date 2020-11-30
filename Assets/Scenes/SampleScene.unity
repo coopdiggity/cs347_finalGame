@@ -1370,7 +1370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obstacle: {fileID: 447532139963473189, guid: 24fc6af9b80aaa440913aa4de904c67b, type: 3}
-  mummy: {fileID: 4137725280809174349, guid: 9b6af0b957b674c4b931c6e3a62a8ffc, type: 3}
+  mummy: {fileID: 4612701280097406316, guid: aaf743c9ccb788741b96746cb8510d65, type: 3}
 --- !u!1 &1904777609
 GameObject:
   m_ObjectHideFlags: 0
