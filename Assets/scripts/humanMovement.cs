@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class humanMovement : MonoBehaviour
 {
     public Text theScore;
-    int life = 3;
+    int life = 20;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,8 +48,8 @@ public class humanMovement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            transform.position = transform.position + new Vector3(0, 2.5f, 0);
-
+            //transform.position = transform.position + new Vector3(0, 2.5f, 0);
+            this.gameObject.GetComponent<Rigidbody>().velocity = 12 * transform.localScale.y * this.gameObject.transform.up;
         }
 
     }
