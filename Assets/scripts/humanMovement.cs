@@ -10,7 +10,7 @@ public class humanMovement : MonoBehaviour
     public GameObject helpMenu;
     GameObject hm;
     int life = 20;
-
+    bool onGround = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +26,7 @@ public class humanMovement : MonoBehaviour
     {
         theScore.text = life.ToString();
        
+        
         if (transform.position.z < -5.6)
         {
             transform.position = transform.position + new Vector3(0, 0, .1f);
@@ -53,7 +54,12 @@ public class humanMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             //transform.position = transform.position + new Vector3(0, 2.5f, 0);
-            this.gameObject.GetComponent<Rigidbody>().velocity = 12 * transform.localScale.y * this.gameObject.transform.up;
+            if (onGround == true)
+            {
+                onGround = false;
+                this.gameObject.GetComponent<Rigidbody>().velocity = 12 * transform.localScale.y * this.gameObject.transform.up;
+                
+            }
         }
       
         if (Input.GetKeyDown(KeyCode.Escape) &&  !GameObject.Find("HelpMenu(Clone)"))// if press escape, spawn help menu; prevents duplicate menus
@@ -62,7 +68,15 @@ public class humanMovement : MonoBehaviour
             var obj = Instantiate(helpMenu, new Vector3(0, 0, 0), Quaternion.identity);
         }
 
+
+
     }
+
+    void OnCollisionStay()
+    {
+        onGround = true;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         life = life - 1;
