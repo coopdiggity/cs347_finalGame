@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MummyScript : MonoBehaviour
 {
     // Start is called before the first frame update
     int k;
     float l;
+    int health = 10;
     public GameObject poison;//poison ball ovj
-    
+    public GameObject victoryScreen;
     void Start()
     {
         Invoke("timerHandler", 0.0f);//call fcn
@@ -35,4 +37,20 @@ public class MummyScript : MonoBehaviour
         Invoke("timerHandler", 0.5f);
 
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(other);
+        health = health - 1;
+        if (health == 0) Invoke("VictoryScreen", 0.0f);
+    }
+
+    void VictoryScreen()
+    {
+        
+        Time.timeScale=0;//pauses the application
+        var obj = Instantiate(victoryScreen, new Vector3(0, 0, 0), Quaternion.identity);
+       
+    }
 }
+

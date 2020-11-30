@@ -6,7 +6,11 @@ using UnityEngine.UI;
 public class humanMovement : MonoBehaviour
 {
     public Text theScore;
+    public GameObject lossScreen;
+    public GameObject helpMenu;
+    GameObject hm;
     int life = 20;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +25,7 @@ public class humanMovement : MonoBehaviour
     void Update()
     {
         theScore.text = life.ToString();
-        if (life == 0) Invoke("LossScreen", 0.0f);
+       
         if (transform.position.z < -5.6)
         {
             transform.position = transform.position + new Vector3(0, 0, .1f);
@@ -51,15 +55,25 @@ public class humanMovement : MonoBehaviour
             //transform.position = transform.position + new Vector3(0, 2.5f, 0);
             this.gameObject.GetComponent<Rigidbody>().velocity = 12 * transform.localScale.y * this.gameObject.transform.up;
         }
+      
+        if (Input.GetKeyDown(KeyCode.Escape) &&  !GameObject.Find("HelpMenu(Clone)"))// if press escape, spawn help menu; prevents duplicate menus
+        {
+            Time.timeScale = 0;//pause application
+            var obj = Instantiate(helpMenu, new Vector3(0, 0, 0), Quaternion.identity);
+        }
 
     }
     private void OnTriggerEnter(Collider other)
     {
         life = life - 1;
+         if (life <= 0) Invoke("LossScreen", 0.0f);
     }
 
     void LossScreen()
     {
-        //create loss screen here that allows restart or quit
+        
+        Time.timeScale = 0;//pauses the application
+        var obj = Instantiate(lossScreen, new Vector3(0,0,0), Quaternion.identity);//spawns loss screen ui
+        
     }
 }
