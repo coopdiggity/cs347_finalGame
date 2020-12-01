@@ -11,6 +11,7 @@ public class humanMovement : MonoBehaviour
     public GameObject bullets;
     public GameObject gun;
     GameObject hm;
+    float time = 0;
     int life = 5;
     bool onGround = true;
     // Start is called before the first frame update
@@ -19,6 +20,8 @@ public class humanMovement : MonoBehaviour
        
         theScore.GetComponent<Text>();
         theScore.text = life.ToString();
+
+        Invoke("timerhandler", 0.0f);
     }
    
     int control = 2;
@@ -30,6 +33,7 @@ public class humanMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        time = time + Time.deltaTime;
         theScore.text = life.ToString();
         isColliding = false;
         
@@ -109,6 +113,16 @@ public class humanMovement : MonoBehaviour
             life++;
         }
          if (life <= 0) Invoke("LossScreen", 0.0f);
+    }
+
+    void timerhandler()
+    {
+        if (time >= 50) Invoke("getGun", 0.0f);//time check for gun
+        Invoke("timerhandler", 0.1f);
+    }
+    void getGun()
+    {
+        haveGun = true;
     }
 
     void LossScreen()
