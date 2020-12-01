@@ -8,6 +8,7 @@ public class humanMovement : MonoBehaviour
     public Text theScore;
     public GameObject lossScreen;
     public GameObject helpMenu;
+    public GameObject bullets;
     GameObject hm;
     int life = 20;
     bool onGround = true;
@@ -20,13 +21,17 @@ public class humanMovement : MonoBehaviour
     }
    
     int control = 2;
+    bool isColliding = false;
 
     // Update is called once per frame
     void Update()
     {
+
+        isColliding = false;
         theScore.text = life.ToString();
-       
-        
+
+        int bulletMove = 0;
+
         if (transform.position.z < -5.6)
         {
             transform.position = transform.position + new Vector3(0, 0, .1f);
@@ -39,6 +44,7 @@ public class humanMovement : MonoBehaviour
             if(control != 1)
             {
                 transform.Translate(-5, 0, 0);
+                bulletMove -= 5;
                 control -= 1;
             }          
         }
@@ -48,6 +54,7 @@ public class humanMovement : MonoBehaviour
             {
                 transform.position = transform.position + new Vector3(5, 0, 0);
                 control += 1;
+                bulletMove += 5;
             }
             
         }
@@ -68,6 +75,25 @@ public class humanMovement : MonoBehaviour
             var obj = Instantiate(helpMenu, new Vector3(0, 0, 0), Quaternion.identity);
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))     
+        {
+            if(control == 1)
+            {
+                var obj = Instantiate(bullets, new Vector3(-5, 1, -3), Quaternion.Euler(90, 0, 0));
+            }
+            if (control == 2)
+            {
+                var obj = Instantiate(bullets, new Vector3(0, 1, -3), Quaternion.Euler(90, 0, 0));
+            }
+            if (control == 3)
+            {
+                var obj = Instantiate(bullets, new Vector3(5, 1, -3), Quaternion.Euler(90, 0, 0));
+            }
+
+
+        }
+
+
 
 
     }
@@ -75,10 +101,14 @@ public class humanMovement : MonoBehaviour
     void OnCollisionStay()
     {
         onGround = true;
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (isColliding)
+            return;
+        isColliding = true;
         life = life - 1;
          if (life <= 0) Invoke("LossScreen", 0.0f);
     }

@@ -3,7 +3,12 @@ guid: fdd1041739eeed744822830c555c3177
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - theScore: {instanceID: 0}
+  - lossScreen: {instanceID: 0}
+  - helpMenu: {instanceID: 0}
+  - bullets: {fileID: 2688065609610488898, guid: 2ba1bbd7e61f2134a9af02128d15acb3,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
