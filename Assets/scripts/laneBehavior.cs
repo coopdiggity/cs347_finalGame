@@ -25,7 +25,7 @@ public class laneBehavior : MonoBehaviour
     {
         var ObstacleClone = Instantiate(Obstacle, new Vector3(transform.position.x, 1, 300), Quaternion.identity);
         //ObstacleClone.GetComponent<Rigidbody>().velocity = -1 * transform.localScale.x * waterDropClone.transform.up;
-        spawnDelay = Random.Range(0.4f, 5.9f); //get spawn time
+        spawnDelay = Random.Range(0.4f, 4.25f); //get spawn time
         if (Time.time >= 40) Invoke("spawnMummy", 0.0f);//time check for mummy
         Invoke("SpawnObstacle", spawnDelay); //new drop
     }
