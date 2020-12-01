@@ -1306,7 +1306,7 @@ MonoBehaviour:
   helpMenu: {fileID: 696867243409094707, guid: 08a8106bb1e44e948a1c9baf2aee217b, type: 3}
   bullets: {fileID: 2688065609610488898, guid: 2ba1bbd7e61f2134a9af02128d15acb3, type: 3}
   gun: {fileID: 5496557950550250945}
-  person: {fileID: 625567203}
+  person: {fileID: 1669969682}
 --- !u!1 &1688935506
 GameObject:
   m_ObjectHideFlags: 0

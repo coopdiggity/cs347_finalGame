@@ -17,6 +17,7 @@ public class humanMovement : MonoBehaviour
     public GameObject helpMenu;
     public GameObject bullets;
     public GameObject gun;
+    public GameObject person;
     float time = 0;//time var
     int life = 5;//player health
     bool onGround = true;//check to see if player on ground or not
@@ -34,8 +35,7 @@ public class humanMovement : MonoBehaviour
     bool isColliding = false;//var to check for repeated collision
     
     bool haveGun = false;//var to check for gun possession
-    public GameObject person = GameObject.Find("Human_Container");//link human container for use in code
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -46,7 +46,7 @@ public class humanMovement : MonoBehaviour
         
         if(haveGun)//if gun possessed
         {
-                gun.transform.position = new Vector3(person.transform.position.x, person.transform.position.y, transform.position.z + 1);//gun goes with person
+                gun.transform.position = new Vector3(person.transform.position.x-1.5f, person.transform.position.y, transform.position.z + 1);//gun goes with person
         }
         
         
@@ -95,7 +95,7 @@ public class humanMovement : MonoBehaviour
         {
             if (haveGun)//if have gun
             {
-                var obj = Instantiate(bullets, new Vector3(person.transform.position.x, person.transform.position.y + .1f, person.transform.position.z + 2), Quaternion.Euler(90, 0, 0));//spawn bullet
+                var obj = Instantiate(bullets, new Vector3(person.transform.position.x-1.5f, person.transform.position.y + .1f, person.transform.position.z + 2), Quaternion.Euler(90, 0, 0));//spawn bullet
             }
         }
 
