@@ -575,7 +575,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Up Arrow - Jump\t\t\t    Right Arrow - Move Right\nLeft Arrow - Move Left\t\tEnter
+  m_Text: "Up Arrow - Jump\t\t\t    Right Arrow - Move Right\nLeft Arrow - Move Left\t\tSpacebar
     - Shoot\n\n"
 --- !u!1 &696867243153546583
 GameObject:

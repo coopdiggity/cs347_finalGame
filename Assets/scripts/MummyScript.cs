@@ -8,7 +8,7 @@ public class MummyScript : MonoBehaviour
     // Start is called before the first frame update
     int k;
     float l;
-    int health = 1;
+    int health = 50;
     public GameObject poison;//poison ball ovj
     public GameObject victoryScreen;
     void Start()
