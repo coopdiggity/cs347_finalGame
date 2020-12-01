@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ * Name:obstacleBehavior
+ * Members:Nathaniel Branham, Cooper Case, Xander Voigt
+ * Purpose:controls movement and deletion of obstacles
+ * 
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,8 +31,8 @@ public class obstacleBehavior : MonoBehaviour
 
         }
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)//if collision
     {
-        Destroy(this.gameObject);
+        Destroy(this.gameObject);//delete
     }
 }

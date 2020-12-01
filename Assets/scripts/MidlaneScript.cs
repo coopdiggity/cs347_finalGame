@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ * Name: MidlaneScript
+ * Members:Nathaniel Branham, Cooper Case, Xander Voigt
+ * Purpose: summon the mummy after a set amount of time
+ * 
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,25 +19,25 @@ public class MidlaneScript : MonoBehaviour
     void Start()
     {
 
-        Invoke("timerhandler", 0.0f);
+        Invoke("timerhandler", 0.0f);//start loop
     }
 
     // Update is called once per frame
     void Update()
     {
-        time = time + Time.deltaTime;
+        time = time + Time.deltaTime;//update time passed
        
     }
     void timerhandler()
     {
-        if (time >= 60) Invoke("spawnMummy", 0.0f);//time check for mummy
-        Invoke("timerhandler", 0.1f);
+        if (time >= 57) Invoke("spawnMummy", 0.0f);//time check for mummy
+        Invoke("timerhandler", 0.1f);//loop
     }
 
     void spawnMummy()
     {
-        CancelInvoke();
-        obj = Instantiate(mummy, new Vector3(0, -0.5f, 41), Quaternion.identity); // at a set time summon the mummy\
+        CancelInvoke();//end loop
+        obj = Instantiate(mummy, new Vector3(0, -0.5f, 41), Quaternion.identity); //  summon the mummy
         
     }
 }

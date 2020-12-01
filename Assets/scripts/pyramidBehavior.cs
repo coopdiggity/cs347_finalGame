@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ * Name:pyramidBehavior
+ * Members:Nathaniel Branham, Cooper Case, Xander Voigt
+ * Purpose:move the pyramids and delete them is they go past a certain point
+ * 
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

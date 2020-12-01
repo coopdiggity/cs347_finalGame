@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿
+/*
+ * Name:gunbehavior
+ * Members:Nathaniel Branham, Cooper Case, Xander Voigt
+ * Purpose:controls movement and deletion of gun clones
+ * 
+*/using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,8 +28,8 @@ public class gunBehavior : MonoBehaviour
 
         }
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)//if collision
     {
-        Destroy(this.gameObject);
+        Destroy(this.gameObject);//delete
     }
 }

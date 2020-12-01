@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * Name:bulletScript
+ * Members:Nathaniel Branham, Cooper Case, Xander Voigt
+ * Purpose: controls movement and eletion of bullet clones
+ * 
+*/using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

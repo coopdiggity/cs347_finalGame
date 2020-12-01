@@ -324,7 +324,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.9245283, g: 0.67005444, b: 0.2660199, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -829,7 +829,7 @@ GameObject:
   - component: {fileID: 999805350}
   - component: {fileID: 999805349}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -902,8 +902,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 999805348}
   m_LocalRotation: {x: 0, y: -0.70710677, z: 0.70710677, w: 0}
-  m_LocalPosition: {x: -0.43999, y: 125.6, z: 186.6}
-  m_LocalScale: {x: 86.53685, y: 86.53685, z: 40.50011}
+  m_LocalPosition: {x: -0.43998, y: 200.5, z: 315.6}
+  m_LocalScale: {x: 160.27312, y: 160.27312, z: 75.00942}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -1096,7 +1096,7 @@ Transform:
   m_GameObject: {fileID: 1245706358}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10000, y: 10000, z: 10000}
+  m_LocalScale: {x: 114.06, y: 114.06, z: 114.06}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
