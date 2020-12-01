@@ -27,7 +27,7 @@ public class humanMovement : MonoBehaviour
     void Update()
     {
         theScore.text = life.ToString();
-       
+        isColliding = false;
         
         if (transform.position.z < -5.6)
         {
