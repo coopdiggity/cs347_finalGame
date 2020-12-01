@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1198,6 +1198,7 @@ MonoBehaviour:
   lossScreen: {fileID: 4847231520587162637, guid: fdd48fffb6a6aac47aa74cfc018d9e07,
     type: 3}
   helpMenu: {fileID: 696867243409094707, guid: 08a8106bb1e44e948a1c9baf2aee217b, type: 3}
+  bullets: {fileID: 2688065609610488898, guid: 2ba1bbd7e61f2134a9af02128d15acb3, type: 3}
 --- !u!1 &1688935506
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,6 +1278,7 @@ GameObject:
   - component: {fileID: 1845126455}
   - component: {fileID: 1845126454}
   - component: {fileID: 1845126458}
+  - component: {fileID: 1845126459}
   m_Layer: 0
   m_Name: MidLane
   m_TagString: Untagged
@@ -1369,8 +1371,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d739c2d8a48c9dd49a032cb650039d1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Obstacle: {fileID: 447532139963473189, guid: 24fc6af9b80aaa440913aa4de904c67b, type: 3}
   mummy: {fileID: 4612701280097406316, guid: aaf743c9ccb788741b96746cb8510d65, type: 3}
+--- !u!114 &1845126459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845126453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c90cd44e9fa0a47812f51b0defc0ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Obstacle: {fileID: 0}
 --- !u!1 &1904777609
 GameObject:
   m_ObjectHideFlags: 0
