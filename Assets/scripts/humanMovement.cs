@@ -9,6 +9,7 @@ public class humanMovement : MonoBehaviour
     public GameObject lossScreen;
     public GameObject helpMenu;
     public GameObject bullets;
+    public GameObject gun;
     GameObject hm;
     int life = 5;
     bool onGround = true;
@@ -22,12 +23,23 @@ public class humanMovement : MonoBehaviour
    
     int control = 2;
     bool isColliding = false;
+    
+    bool haveGun = false;
+    public GameObject person = GameObject.Find("Human_Container");
 
     // Update is called once per frame
     void Update()
     {
         theScore.text = life.ToString();
         isColliding = false;
+        
+        haveGun = true;
+        if(haveGun)
+        {
+                gun.transform.position = new Vector3(person.transform.position.x, person.transform.position.y, transform.position.z + 1);
+        }
+        
+        
         
         if (transform.position.z < -5.6)
         {
@@ -72,20 +84,7 @@ public class humanMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))     
         {
-            if(control == 1)
-            {
-                var obj = Instantiate(bullets, new Vector3(-5, 1, -3), Quaternion.Euler(90, 0, 0));
-            }
-            if (control == 2)
-            {
-                var obj = Instantiate(bullets, new Vector3(0, 1, -3), Quaternion.Euler(90, 0, 0));
-            }
-            if (control == 3)
-            {
-                var obj = Instantiate(bullets, new Vector3(5, 1, -3), Quaternion.Euler(90, 0, 0));
-            }
-
-
+           var obj = Instantiate(bullets, new Vector3(person.transform.position.x, person.transform.position.y + .1f, person.transform.position.z + 2), Quaternion.Euler(90, 0, 0));
         }
 
     }
