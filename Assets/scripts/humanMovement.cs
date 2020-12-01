@@ -10,7 +10,7 @@ public class humanMovement : MonoBehaviour
     public GameObject helpMenu;
     public GameObject bullets;
     GameObject hm;
-    int life = 20;
+    int life = 5;
     bool onGround = true;
     // Start is called before the first frame update
     void Start()
@@ -96,6 +96,9 @@ public class humanMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (isColliding)
+            return;
+        isColliding = true;
         life = life - 1;
          if (life <= 0) Invoke("LossScreen", 0.0f);
     }
