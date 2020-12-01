@@ -103,7 +103,7 @@ public class humanMovement : MonoBehaviour
             return;
         isColliding = true;
         life = life - 1;
-        if(other.gameObject.name == "gun")
+        if(other.gameObject.name ==  "gun(Clone)")
         {
             haveGun = true;
             life++;

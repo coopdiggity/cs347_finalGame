@@ -21,7 +21,7 @@ public class gunSpawn : MonoBehaviour
     }
     void timerhandler()
     {
-        if (time >= 10) Invoke("spawnGuns", 0.0f);//time check for gun
+        if (time >= 45) Invoke("spawnGuns", 0.0f);//time check for gun
         Invoke("timerhandler", 0.1f);
     }
 

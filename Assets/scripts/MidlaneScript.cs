@@ -24,7 +24,7 @@ public class MidlaneScript : MonoBehaviour
     }
     void timerhandler()
     {
-        if (time >= 10) Invoke("spawnMummy", 0.0f);//time check for mummy
+        if (time >= 60) Invoke("spawnMummy", 0.0f);//time check for mummy
         Invoke("timerhandler", 0.1f);
     }
 
