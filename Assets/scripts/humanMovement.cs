@@ -21,6 +21,7 @@ public class humanMovement : MonoBehaviour
     }
    
     int control = 2;
+    bool isColliding = false;
 
     // Update is called once per frame
     void Update()
