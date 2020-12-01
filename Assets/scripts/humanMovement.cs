@@ -68,7 +68,23 @@ public class humanMovement : MonoBehaviour
             var obj = Instantiate(helpMenu, new Vector3(0, 0, 0), Quaternion.identity);
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))     
+        {
+            if(control == 1)
+            {
+                var obj = Instantiate(bullets, new Vector3(-5, 1, -3), Quaternion.Euler(90, 0, 0));
+            }
+            if (control == 2)
+            {
+                var obj = Instantiate(bullets, new Vector3(0, 1, -3), Quaternion.Euler(90, 0, 0));
+            }
+            if (control == 3)
+            {
+                var obj = Instantiate(bullets, new Vector3(5, 1, -3), Quaternion.Euler(90, 0, 0));
+            }
 
+
+        }
 
     }
 
