@@ -33,7 +33,7 @@ public class humanMovement : MonoBehaviour
         theScore.text = life.ToString();
         isColliding = false;
         
-        haveGun = true;
+        
         if(haveGun)
         {
                 gun.transform.position = new Vector3(person.transform.position.x, person.transform.position.y, transform.position.z + 1);
@@ -84,7 +84,10 @@ public class humanMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))     
         {
-           var obj = Instantiate(bullets, new Vector3(person.transform.position.x, person.transform.position.y + .1f, person.transform.position.z + 2), Quaternion.Euler(90, 0, 0));
+            if (haveGun)
+            {
+                var obj = Instantiate(bullets, new Vector3(person.transform.position.x, person.transform.position.y + .1f, person.transform.position.z + 2), Quaternion.Euler(90, 0, 0));
+            }
         }
 
     }
@@ -100,6 +103,11 @@ public class humanMovement : MonoBehaviour
             return;
         isColliding = true;
         life = life - 1;
+        if(other.gameObject.name == "gun")
+        {
+            haveGun = true;
+            life++;
+        }
          if (life <= 0) Invoke("LossScreen", 0.0f);
     }
 
