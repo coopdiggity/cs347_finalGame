@@ -8,6 +8,7 @@ public class humanMovement : MonoBehaviour
     public Text theScore;
     public GameObject lossScreen;
     public GameObject helpMenu;
+    public GameObject bullets;
     GameObject hm;
     int life = 20;
     bool onGround = true;
